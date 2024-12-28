@@ -2,11 +2,30 @@ body{
     background:black;
 }
 #canvas1{
-    position:absolute;
-    border:3px solid whitesmoke;
+    position:relative;
+   
     width:800px;
     height:700px;
     top:50%;
     left:50%;
     transform:translate(-50%);
 }
+#container{
+    position:absolute;
+    border:3px solid whitesmoke;
+    transform:translate(-50%);
+    left:50%;
+
+}
+p{
+    
+    color:aliceblue;
+    font-size: large;
+}
+#slider{
+    position:relative;
+    left:50%;
+    width:800px;
+    transform: translate(-50%);
+}
+
