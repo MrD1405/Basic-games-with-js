@@ -32,7 +32,6 @@ class Layer{
         this.y=0;
         this.width=2400;
         this.height=700;
-       
         this.speedModifier=speedModifier;
         this.speed=gameSpeed*speedModifier;
     }
