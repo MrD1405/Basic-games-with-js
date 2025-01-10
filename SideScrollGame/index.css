@@ -8,6 +8,6 @@ body{
     transform:translate(-50%,-50%);
     background-color: white;
 }
-#player-img{
+#player-img , #background-img ,#enemy-img{
     visibility: hidden;
 }
