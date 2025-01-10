@@ -57,6 +57,7 @@ class Player{
         
     }
     draw(context){
+        
         context.drawImage(this.image,this.frameX*this.width,this.frameY*this.height,
             this.width,this.height,this.x,this.y,this.width,this.height);
         
@@ -82,7 +83,7 @@ class Player{
             this.speedX=-5;
         }
         else if((input.keys.indexOf('ArrowUp')> -1) && this.onGround()){
-            this.speedY-=32;
+            this.speedY-=25;
         }
         else{
             this.speedX=0;
@@ -137,7 +138,7 @@ class Background{
         this.speedModifier=speedModifier;
     }
     update(){
-        this.x-=this.speed*this.Modifier;
+        this.x-=this.speed*this.speedModifier;
         
         if(this.x<= 0-this.width)this.x=0;
     }
@@ -157,7 +158,7 @@ class Enemies{
         this.width=this.spriteWidth*0.25;
         this.height=this.spriteHeight*0.25;
         this.x=this.gameWidth;
-        this.y=this.gameHeight-this.height;
+        this.y=this.gameHeight-this.height-10;
         this.image=document.getElementById("enemy-img");
         this.speedX=5;
         this.frame=0;
@@ -228,6 +229,7 @@ function  displayStatusText(context){
         context.font='40px sans-serif';
         context.fillText('Game Over!!!',canvas.width/2-50,102);
 
+
         context.fillStyle='black';
         context.textAlign='center';
         context.font='40px sans-serif';
@@ -236,7 +238,7 @@ function  displayStatusText(context){
         context.fillStyle='white';
         context.textAlign='center';
         context.font='40px sans-serif';
-        context.fillText('Double-click mouse to start again',canvas.width/2-50,152);
+        context.fillText('Double-click mouse to start again',canvas.width/2-50,155);
         
     }
 
