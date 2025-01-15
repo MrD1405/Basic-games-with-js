@@ -1,5 +1,6 @@
 body{
     background-color:rgb(42, 41, 41);
+    overflow:hidden;
 }
 #canvas1{
     position:absolute;

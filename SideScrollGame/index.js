@@ -3,7 +3,7 @@
 window.addEventListener("load",function(){
 const canvas=document.getElementById("canvas1");
 const ctx=canvas.getContext('2d');
-canvas.width=1667;
+canvas.width=1400;
 canvas.height=500;
 
 
@@ -69,7 +69,7 @@ class Player{
             const dx=(this.x+this.width/2)-(enemy.x+enemy.width/2);
             const dy=(this.y+this.height/2)-(enemy.y+enemy.height/2);
             const dist=Math.sqrt(dx*dx+dy*dy);
-            if(dist<this.width/2+enemy.width/4){
+            if(dist<this.width/2+enemy.width/5){
                 gameOver=true;
             }
         })
