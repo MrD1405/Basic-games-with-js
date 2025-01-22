@@ -44,13 +44,19 @@ async function handleInput(e){
         setupInput();
         break;
     }
+    grid.cells.forEach(cell=>{
+        console.log(cell.tile);
+        console.log(cell.mergeTile);
+        
+    })
+    console.log("\n");
     grid.cells.forEach(cell=>cell.mergeTiles());
     
     const newTile=new Tile(gridElement);
     grid.randomEmptyCell().tile=newTile;
     if(!canMoveUp() && !canMoveDown() && !canMoveRight() && !canMoveLeft() ){
         newTile.waitForTransition(true).then(()=>{
-            alert("You lose!");
+            alert("You lose! \nReload to play again");
         })
         return;
     }
@@ -89,8 +95,8 @@ function slideTiles(cells){
             let lastValidCell;
             for(let j=i-1;j>=0;j--){
                 const moveToCell=group[j];
-                lastValidCell=group[j];
                 if(!moveToCell.canAccept(cell.tile))break;
+                lastValidCell=moveToCell;
                 
             }
             if(lastValidCell!=null){
